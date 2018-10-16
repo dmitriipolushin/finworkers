@@ -45,10 +45,10 @@ a=[[CurNumOfGamers,800,3*CurNumOfGamers,6500],
   [m.trunc(2.5*CurNumOfGamers),400,m.trunc(1.5*CurNumOfGamers),5000],
   [3*CurNumOfGamers,300,CurNumOfGamers,4500]]
 mes=1
-Lvl=3
+Level=3
 print('Начало игры')
 while mes<13:
     print('Текущий месяц = ', mes)
     starshiy=m.fmod(mes,CurNumOfGamers)
-    Lvl=LevelCount(Lvl)
+    Level=LevelCount(Level)
     mes+=1
