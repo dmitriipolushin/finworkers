@@ -1,8 +1,8 @@
 building = {'view': 0,'DL': 0} # Создаем единую для всех видов строительства запиську билдинг
 loan = {'qnt', 'DL'}# Это записька ссуды: qnt - сумма ссуды, DL - дата выплаты(Дедлайн)
-buildings = []
+buildings = [] * 6
 for i in range(6):
-    buildings.append(building) # В итоге имеем массив из 6 записек билдингов(макс. кол-во фабрик)
+    buildings.append(building) # В итоге имеем массив из 6 записек билдингов(макс. кол-во фабрик, которое можно построить)
 playerLoans = []
 for i in range (6):
     playerLoans.append(loan) # ссуды берутся под фабрики, поэтому их тоже 6
@@ -20,8 +20,9 @@ player = {'money': 10000,      # Денежки
           'buildings': buildings,# Все происходящие в данный момент строительства
           'loans': playerLoans,  # Массив с ссудами игрока
          }
-Players = []
-for i in range(12):
-    Players.append(player)
-print(Players[0]['buildings'][0]['view'])
+players = []
+print('\n Сколько будет игрроков?')
+curNumOfGamers = int(input())
+for i in range(curNumOfGamers):
+    players.append(player)
 
