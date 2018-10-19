@@ -1,5 +1,5 @@
 def players():
-    building = {'bfactory': 0,'DLf': 0, 'afactory': 0, 'DLaf': 0} # Создаем единую для всех видов строительства запиську билдинг
+    building = {'bfactory': 0,'DLf': 0, 'bAFactory': 0, 'DLaf': 0} # Создаем единую для всех видов строительства запиську билдинг
     loan = {'qnt', 'DL'}# Это записька ссуды: qnt - сумма ссуды, DL - дата выплаты(Дедлайн)
     buildings = []
     for i in range(6):
