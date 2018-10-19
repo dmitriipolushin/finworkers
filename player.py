@@ -2,7 +2,7 @@ def players():
     building = {'bfactory': 0,'DLf': 0, 'afactory': 0, 'DLaf': 0} # Создаем единую для всех видов строительства запиську билдинг
     loan = {'qnt', 'DL'}# Это записька ссуды: qnt - сумма ссуды, DL - дата выплаты(Дедлайн)
     buildings = []
-    for i in range(3):
+    for i in range(6):
         buildings.append(building) # В итоге имеем массив из 6 записек билдингов(макс. кол-во фабрик, которое можно построить)
     playerLoans = []
     for i in range (6):

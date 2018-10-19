@@ -18,5 +18,5 @@ def buildings():
             print('оставшиеся деньги:', player.players[i]['money'])
             for j in range(qua) 
             player.players[i][buildings[j]]['bfactory'] += qua 
-            player.players[i][buildings[j]]['DLf'] = mes        
-            #month + 3 + 2*answer
+            player.players[i][buildings[j]]['DLf'] = 5
+            
