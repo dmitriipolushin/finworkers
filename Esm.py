@@ -1,9 +1,15 @@
 import numpy as np
 value = np.zeros((10))
 quantity = np.zeros_like(value)
+<<<<<<< HEAD
 numbersmixESM[ActualGamer]= np.zeros_like(value)
 def AcquisitionOfEsm (Lvl,CurNumOfGamers):
     prESM,qntESM = 0,0 # прцедура для приобретения есм игроками
+=======
+numbersmixESM = np.zeros_like(value)
+def AcquisitionOfEsm (Lvl):
+    prESM,qntESM = 0,0 # прцедура для приобретения есм игроками 
+>>>>>>> 041888cee22ceae3c39ff0762147641ba824ef0a
     for ActualGamer in range(CurNumOfGamers):
         print('Обстановка на рынке:')
         print('Общее кол-во продаваемых ЕСМ= ',a[Lvl-1][0],', МинЦенаЕСМ= ',a[Lvl-1][1])
@@ -31,8 +37,13 @@ def AcquisitionOfEsm (Lvl,CurNumOfGamers):
         print('Цена за одну ЕСМ в заявке игрока ',ActualGamer+1,' = ',value[ActualGamer])
         print('Общая сумма заявки= ',prESM*qntESM)
         return
+<<<<<<< HEAD
 def SatisfactionOfApplicationsEsm():
     for ActualGamer in range(CurNumOfGamers-1):
+=======
+def mixEsm():
+    for ActualGamer in range(CurNumOfGamers-1): #процедура сортировки заявок на есм
+>>>>>>> 041888cee22ceae3c39ff0762147641ba824ef0a
         for i in range(CurNumOfGamers-ActualGamer):
             if value[d]<value[d+1]:
                 z = value[d] #Сортировка цен
