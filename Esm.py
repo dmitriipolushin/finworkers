@@ -1,14 +1,15 @@
 import numpy as np
+import player
 value = np.zeros((10))
 quantity = np.zeros_like(value)
-numbersmixESM[ActualGamer]= np.zeros_like(value)
+numbersmixESM = np.zeros_like(value)
 def AcquisitionOfEsm (Lvl):
     prESM,qntESM = 0,0 # прцедура для приобретения есм игроками
     for ActualGamer in range(CurNumOfGamers):
         print('Обстановка на рынке:')
         print('Общее кол-во продаваемых ЕСМ= ',a[Lvl-1][0],', МинЦенаЕСМ= ',a[Lvl-1][1])
         print('Игрок ',ActualGamer+ 1)
-        print('Ваши деньги = ',Players[ActualGamer]['money'])
+        print('Ваши деньги = ',player.players[ActualGamer]['money'])
         print('Сколько ЕСМ вы хотите приобрести? ')
         qntESM=int(input())
         while (qntESM>a[Lvl-1][0]):
@@ -18,7 +19,7 @@ def AcquisitionOfEsm (Lvl):
         if (qntESM != 0):
             print('По какой цене? ')
             prESM=int(input())
-            while((Players[ActualGamer]['money'] - prESM*qntESM)<0) or (prESM<a[Lvl-1][1]) or (qntESM>a[Lvl-1][0]): #Здесь он проверяет все ли в порядке с заявкой
+            while((player.players[ActualGamer]['money'] - prESM*qntESM)<0) or (prESM<a[Lvl-1][1]) or (qntESM>a[Lvl-1][0]): #Здесь он проверяет все ли в порядке с заявкой
                 print('Недопустимая сумма')
                 print('Введите другую цену или кол-во ЕСМ')
                 print('Кол-во ')
