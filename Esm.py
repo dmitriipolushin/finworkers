@@ -4,7 +4,7 @@ value = np.zeros((10))
 quantity = np.zeros_like(value)
 numbersmixESM = np.zeros_like(value)
 def AcquisitionOfEsm (Lvl):
-    prESM,qntESM = 0,0 # прцедура для приобретения есм игроками
+    prESM,qntESM = 0,0 # прцедура для приобретения есм игроками 
     for ActualGamer in range(CurNumOfGamers):
         print('Обстановка на рынке:')
         print('Общее кол-во продаваемых ЕСМ= ',a[Lvl-1][0],', МинЦенаЕСМ= ',a[Lvl-1][1])
@@ -33,7 +33,7 @@ def AcquisitionOfEsm (Lvl):
         print('Общая сумма заявки= ',prESM*qntESM)
         return
 def mixEsm():
-    for ActualGamer in range(CurNumOfGamers-1):
+    for ActualGamer in range(CurNumOfGamers-1): #процедура сортировки заявок на есм
         for i in range(CurNumOfGamers-ActualGamer):
             if value[d]<value[d+1]:
                 z = value[d] #Сортировка цен
