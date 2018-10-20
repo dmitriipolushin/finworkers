@@ -7,9 +7,12 @@ print('Начало игры')
 player.players()
 while mes < 13:
     print('Текущий месяц = ', mes)
-    starshiy=m.fmod(mes,CurNumOfGamers)
-    AcquisitionOfEsm (Level)
-    Level=LevelCount(Level)
     costs.monthlyCosts()
+    starshiy=m.fmod(mes,player.curNumOfGamers)
+    esm.AcquisitionOfEsm(Level)
+    Level=LevelCount(Level)
     
+
+
+
     mes+=1 
