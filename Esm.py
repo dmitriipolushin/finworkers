@@ -46,7 +46,16 @@ def mixEsm():
                 numbersmixESM[d]= numbersmixESM[d+1]
                 numbersmixESM[d+1]=xx
     for ActualGamer in range(CurNumOfGamers):
-        if (quantity[ActualGamer]=0):
+        if (quantity[ActualGamer]==0):
             print('Игрок ',ActualGamer,' не делал заявки ')
         else:
             print(ActualGamer,'. ','Заявка игрока ',numbersmixESM[ActualGamer],' величиной ',value[ActualGamer],' за одну ЕСМ')
+def satisfaction(Lvl, rmngESM):
+    for ActualGamer in range(CurNumOfGamers):
+        if ((rmngESM>=quantity[ActualGamer]) and (rmngESM!=0)):
+            player.players[numbersmixESM[ActualGamer]]['money']-=value[ActualGamer]*quantity[ActualGamer]
+            player.players[numbersmixESM[ActualGamer]]['esm']+= quantity[ActualGamer]
+            print(' Игрок ',ActualGamer,' получает ',quantity[ActualGamer],' ЕСМ')
+        else:
+            print(' Все ЕСМ были раскуплены ')
+            print('оставшиеся деньги игрока ',numbersmixESM[ActualGamer],' = ',player.players[numbersmixESM[ActualGamer]]['money'])
