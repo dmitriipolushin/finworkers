@@ -1,11 +1,9 @@
-import numpy as np
 import player
-value = np.zeros((10))
-quantity = np.zeros_like(value)
-numbersmixESM = np.zeros_like(value)
+import mix
+import tabl
 def AcquisitionOfEsm (Lvl):
     prESM,qntESM = 0,0 # прцедура для приобретения есм игроками 
-    for ActualGamer in range(CurNumOfGamers):
+    for ActualGamer in range(player.CurNumOfGamers):
         print('Обстановка на рынке:')
         print('Общее кол-во продаваемых ЕСМ= ',a[Lvl-1][0],', МинЦенаЕСМ= ',a[Lvl-1][1])
         print('Игрок ',ActualGamer+ 1)
@@ -26,36 +24,10 @@ def AcquisitionOfEsm (Lvl):
                 qntESM=int(input())
                 print('Цена ')
                 prESM=int(input())
-        value[ActualGamer] = prESM
-        quantity[ActualGamer]=qntESM
-        numbersmixESM[ActualGamer] = ActualGamer
+        mix.value[ActualGamer] = prESM
+        mix.quantity[ActualGamer]=qntESM
+        mix.numbersmix[ActualGamer] = ActualGamer
         print('Цена за одну ЕСМ в заявке игрока ',ActualGamer+1,' = ',value[ActualGamer])
         print('Общая сумма заявки= ',prESM*qntESM)
-        return
-def mixEsm():
-    for ActualGamer in range(CurNumOfGamers-1): #процедура сортировки заявок на есм
-        for i in range(CurNumOfGamers-ActualGamer):
-            if value[d]<value[d+1]:
-                z = value[d] #Сортировка цен
-                value[d] = value[d+1]
-                value[d+1] = z
-                u = quantity[d] #Сортировка кол-ва
-                quantity[d]= quantity[d+1]
-                quantity[d+1]= u
-                xx= numbersmixESM[d]
-                numbersmixESM[d]= numbersmixESM[d+1]
-                numbersmixESM[d+1]=xx
-    for ActualGamer in range(CurNumOfGamers):
-        if (quantity[ActualGamer]==0):
-            print('Игрок ',ActualGamer,' не делал заявки ')
-        else:
-            print(ActualGamer,'. ','Заявка игрока ',numbersmixESM[ActualGamer],' величиной ',value[ActualGamer],' за одну ЕСМ')
-def satisfaction(Lvl, rmngESM):
-    for ActualGamer in range(CurNumOfGamers):
-        if ((rmngESM>=quantity[ActualGamer]) and (rmngESM!=0)):
-            player.players[numbersmixESM[ActualGamer]]['money']-=value[ActualGamer]*quantity[ActualGamer]
-            player.players[numbersmixESM[ActualGamer]]['esm']+= quantity[ActualGamer]
-            print(' Игрок ',ActualGamer,' получает ',quantity[ActualGamer],' ЕСМ')
-        else:
-            print(' Все ЕСМ были раскуплены ')
-            print('оставшиеся деньги игрока ',numbersmixESM[ActualGamer],' = ',player.players[numbersmixESM[ActualGamer]]['money'])
+mix.mixEsmEgp()
+mix.satisfactionEsm(tabl.Level, tabl.a[tabl.Level][0])

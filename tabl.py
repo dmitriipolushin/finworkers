@@ -1,5 +1,6 @@
 import random
 import math as m
+import player
 def LevelCount(Lvl):
     print('Уровень=', Lvl)
     Count=0
@@ -34,19 +35,8 @@ def LevelCount(Lvl):
             Lvl=1
     if Lvl>5: Lvl-=5;
     return Lvl
-print('Сколько игроков? ')
-CurNumOfGamers=int(input())
-a=[[CurNumOfGamers,800,3*CurNumOfGamers,6500],
-  [m.trunc(1.5*CurNumOfGamers),650,m.trunc(2.5*CurNumOfGamers),6000],
-  [2*CurNumOfGamers,500,2*CurNumOfGamers,5500],
-  [m.trunc(2.5*CurNumOfGamers),400,m.trunc(1.5*CurNumOfGamers),5000],
-  [3*CurNumOfGamers,300,CurNumOfGamers,4500]]
-mes=1
-Level=3
-print('Начало игры')
-while mes<13:
-    print('Текущий месяц = ', mes)
-    starshiy=m.fmod(mes,CurNumOfGamers)
-    AcquisitionOfEsm (Level)
-    Level=LevelCount(Level)
-    mes+=1
+a=[[player.CurNumOfGamers,800,3*player.CurNumOfGamers,6500],
+  [m.trunc(1.5*player.CurNumOfGamers),650,m.trunc(2.5*player.CurNumOfGamers),6000],
+  [2*player.CurNumOfGamers,500,2*player.CurNumOfGamers,5500],
+  [m.trunc(2.5*player.CurNumOfGamers),400,m.trunc(1.5*player.CurNumOfGamers),5000],
+  [3*player.CurNumOfGamers,300,player.CurNumOfGamers,4500]]
