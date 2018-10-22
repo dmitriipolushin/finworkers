@@ -2,6 +2,9 @@ import player
 import costs
 import tabl
 import Esm
+import Egp
+import buildings
+import production
 import math as m
 print('Добро пожаловать в игру финансовые воротилы!')
 mes=1
@@ -11,11 +14,10 @@ player.players()
 while mes < 13:
     print('Текущий месяц = ', mes)
     costs.monthlyCosts()
-    starshiy=m.fmod(mes,player.curNumOfGamers)
-    Esm.AcquisitionOfEsm(tabl.Level)
+    starshiy=m.fmod(mes, player.CurNumOfGamers)
     tabl.Level=tabl.LevelCount(tabl.Level)
-    
-
-
-
-    mes+=1 
+    Esm.AcquisitionOfEsm(tabl.Level)
+    production.productionEgp()
+    Egp.AcquisitionOfEgp(tabl.Level)
+    buildings.buildings()
+    mes+=1

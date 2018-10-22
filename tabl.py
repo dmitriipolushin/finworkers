@@ -2,7 +2,6 @@ import random
 import math as m
 import player
 def LevelCount(Lvl):
-    print('Уровень=', Lvl)
     Count=0
     Count=random.randint(1,12)
     if (2<=Lvl<=4):
@@ -33,7 +32,8 @@ def LevelCount(Lvl):
             Lvl=2
         elif (Count==11):
             Lvl=1
-    if Lvl>5: Lvl-=5;
+    if Lvl>5: Lvl-=5
+    print('Уровень=', Lvl)
     return Lvl
 a=[[player.CurNumOfGamers,800,3*player.CurNumOfGamers,6500],
   [m.trunc(1.5*player.CurNumOfGamers),650,m.trunc(2.5*player.CurNumOfGamers),6000],

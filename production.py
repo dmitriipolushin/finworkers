@@ -1,20 +1,20 @@
 import player
 def productionEgp():
-    for i in range(player.curNumOfGamers):
+    for i in range(player.CurNumOfGamers):
         ans = input('Вы хотите производить продукцию в этом месяце?[y/n]:')
         if ans == 'y':
             qua = int(input('Сколько ЕСМ вы хотите переработать?'))
-            while qua > player.players[i]['esm']:
+            while qua > player.qplayers[i]['esm']:
                 qua = input('У вас недостаточно ЕСМ, введите другое число')
             quaCommon = int(input('Сколько ЕСМ вы хотите переработать на обычных фабриках?'))
-            while quaCommon > player.players[i]['factory']:
+            while quaCommon > player.qplayers[i]['factory']:
                 quaCommon = int(input('У вас недостаточно обычных фабрик, введите другое число'))
-            player.players[i]['esm'] -= quaCommon
-            player.players[i]['egp'] += quaCommon
-            player.players[i]['money'] -= quaCommon*2000
+            player.qplayers[i]['esm'] -= quaCommon
+            player.qplayers[i]['egp'] += quaCommon
+            player.qplayers[i]['money'] -= quaCommon*2000
             quaAuto = int(input('Сколько ЕСМ вы хотите переработать на автоматических фабриках?'))
-            while quaAuto > player.players[i]['autoFactory']*2:
+            while quaAuto > player.qplayers[i]['autoFactory']*2:
                 quaAuto = int(input('У вас недостаточно обычных фабрик, введите другое число'))
-            player.players[i]['esm'] -= quaAuto
-            player.players[i]['egp'] += quaAuto
-            player.players[i]['money'] -= quaAuto*1500
+            player.qplayers[i]['esm'] -= quaAuto
+            player.qplayers[i]['egp'] += quaAuto
+            player.qplayers[i]['money'] -= quaAuto*1500
