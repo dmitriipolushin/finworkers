@@ -1,5 +1,5 @@
 qplayers = []
-CurNumOfGamers=2
+CurNumOfGamers=0
 def players():
     building = {'bfactory': 0,'DLf': 0, 'bAFactory': 0, 'DLaf': 0, 'upgrade': 0} # Создаем единую для всех видов строительства запиську билдинг
     loan = {'qnt', 'DL'}# Это записька ссуды: qnt - сумма ссуды, DL - дата выплаты(Дедлайн)
@@ -17,11 +17,8 @@ def players():
         'egp': 2,            # Кол-во ЕГП
         'buildings': buildings,# Все происходящие в данный момент строительства
         'loans': playerLoans}  # Массив с ссудами игрока
-    print('\n Сколько будет игрроков?')
+    print('\n Сколько будет игроков?')
+    global CurNumOfGamers
     CurNumOfGamers = int(input())
     for i in range(CurNumOfGamers):
         qplayers.append(player)
-        #print(qplayers)
-
-    
-
