@@ -11,6 +11,7 @@ mes=1
 tabl.Level=3
 print('Начало игры')
 player.players()
+
 while mes < 13:
     print('Текущий месяц = ', mes)
     costs.monthlyCosts()

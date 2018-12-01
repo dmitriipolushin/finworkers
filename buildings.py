@@ -1,6 +1,10 @@
 import player
 def buildings():
     for i in range(player.CurNumOfGamers):
+        print('Игрок ',i+1)
+        print('У вас ',player.qplayers[i]['factory'],' Обычных фабрик')
+        print('У вас ',player.qplayers[i]['autoFactory'],' автоматизированных фабрик')
+        print('У вас ',player.qplayers[i]['buildings'],' строящихся фабрик')
         print('Вы хотите строить фабрики в этом месяце?[y/n]')
         ans = input()
         if ans == 'y':
