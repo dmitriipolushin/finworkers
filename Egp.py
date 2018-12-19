@@ -2,6 +2,7 @@ import player
 import mix
 import tabl
 import math as m
+import os
 def AcquisitionOfEgp(Lvl): #процедура для продажи егп игроками
     a=[[player.CurNumOfGamers,800,3*player.CurNumOfGamers,6500],
     [m.trunc(1.5*player.CurNumOfGamers),650,m.trunc(2.5*player.CurNumOfGamers),6000],
@@ -35,5 +36,6 @@ def AcquisitionOfEgp(Lvl): #процедура для продажи егп иг
             numbersmixESM[ActualGamer] = ActualGamer
             print('Цена за одну ЕГП в заявке игрока ',ActualGamer+1,' = ',value[ActualGamer])
             print('Общая сумма заявки= ',prEGP*qntEGP)
+        os.system('cls')
     mix.mixEsmEgp()
     mix.satisfactionEgp(tabl.Level, a[tabl.Level][2])

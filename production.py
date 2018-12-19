@@ -1,6 +1,6 @@
 import player
+import os
 def productionEgp():
-    print('игроки',player.CurNumOfGamers)
     for i in range(player.CurNumOfGamers):
         print('Игрок ',i+1)
         print('У вас ',player.qplayers[i]['esm'],' ЕСМ.')
@@ -21,5 +21,5 @@ def productionEgp():
             player.qplayers[i]['esm'] -= quaAuto
             player.qplayers[i]['egp'] += quaAuto
             player.qplayers[i]['money'] -= quaAuto*1500
-    print('игроки',player.CurNumOfGamers)
+        os.system('cls')
     return

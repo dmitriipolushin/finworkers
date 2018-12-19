@@ -26,7 +26,7 @@ def satisfactionEsm(Lvl, rmngESM): #процедура удовлетворен�
         if ((rmngESM>=quantity[ActualGamer]) and (rmngESM!=0)): #проверка поданой заявки. Если продается есм больше, чем покупается
             player.qplayers[numbersmix[ActualGamer]]['money']-=value[ActualGamer]*quantity[ActualGamer]
             player.qplayers[numbersmix[ActualGamer]]['esm']+= quantity[ActualGamer]
-            rmngESM-=quantity[ActualGamer];
+            rmngESM-=quantity[ActualGamer]
             print(' Игрок ',ActualGamer+1,' получает ',quantity[ActualGamer],' ЕСМ')
         elif((rmngESM<=quantity[ActualGamer]) and (rmngESM!=0)): # Если есм осталось меньше, чем нужно игроку
             player.qplayers[numbersmix[ActualGamer]]['money']-=value[ActualGamer]*rmngESM
