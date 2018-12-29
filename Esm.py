@@ -1,6 +1,5 @@
 import player
 import mix
-import tabl
 import math as m
 import os
 def AcquisitionOfEsm (Lvl):
@@ -37,6 +36,6 @@ def AcquisitionOfEsm (Lvl):
         print('Цена за одну ЕСМ в заявке игрока ',ActualGamer+1,' = ',mix.value[ActualGamer])
         print('Общая сумма заявки= ',prESM*qntESM)
         os.system('cls')
-    mix.mixEsmEgp()
-    mix.satisfactionEsm(tabl.Level, a[tabl.Level][0])
+    mix.mixEsm()
+    mix.satisfactionEsm(a[Lvl-1][0])
     return

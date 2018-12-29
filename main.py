@@ -21,5 +21,6 @@ while mes < 13:
     Esm.AcquisitionOfEsm(tabl.Level)
     production.productionEgp()
     Egp.AcquisitionOfEgp(tabl.Level)
-    buildings.buildings()
+    for ActualGamer in range(player.CurNumOfGamers):
+        buildings.buildings(ActualGamer)
     mes+=1

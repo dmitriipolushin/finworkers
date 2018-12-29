@@ -1,6 +1,5 @@
 import player
 import mix
-import tabl
 import math as m
 import os
 def AcquisitionOfEgp(Lvl): #процедура для продажи егп игроками
@@ -12,30 +11,31 @@ def AcquisitionOfEgp(Lvl): #процедура для продажи егп иг
     prEGP,qntEGP=0,0
     for ActualGamer in range(player.CurNumOfGamers):
         print('Обстановка на рынке:')
-        print('Общее кол-во скупаемых ЕГП = ',a[Lvl-1][2],', МаксЦенаЕГП = ',a[Lvl][3])
+        print('Общее кол-во скупаемых ЕГП = ',a[Lvl-1][2],', МаксЦенаЕГП = ',a[Lvl-1][3])
         print('Игрок ',ActualGamer+1)
         print('Ваши деньги= ',player.qplayers[ActualGamer]['money'])
+        print('У вас ',player.qplayers[ActualGamer]['egp'],' ЕГП.')
         print('Сколько ЕГП вы хотите продать? ')
         qntEGP=int(input())
-        while(qntEGP>a[Lvl-1][2]):
-            print('Недопустимое кол-во. Вы можете продать не более ',a[Lvl][2],' ЕГП ')
+        while(qntEGP>a[Lvl-1][2]) or (qntEGP>player.qplayers[ActualGamer]['egp']):
+            print('Недопустимое кол-во. Вы можете продать не более ',a[Lvl-1][2],' ЕГП и у вас есть: ',player.qplayers[ActualGamer]['egp'])
             print('Введите другое кол-во ')
             qntEGP=int(input())
         if (qntEGP!=0):
             print('По какой цене? ')
             prEGP=int(input())
-            while (qntEGP>a[Lvl-1][2]) or (prEGP>a[Lvl-1][3]): #Здесь он проверяет все ли в порядке с заявкой
-                print('Недопустимая сумма')
-                print('Введите другую цену или кол-во ЕГП' )
-                print('Кол-во ')
-                qntEGP=int(input())
-                print('Цена ');
-                prEGP=int(input())
-            value[ActualGamer]=prEGP
-            quantity[ActualGamer]=qntEGP
-            numbersmixESM[ActualGamer] = ActualGamer
-            print('Цена за одну ЕГП в заявке игрока ',ActualGamer+1,' = ',value[ActualGamer])
-            print('Общая сумма заявки= ',prEGP*qntEGP)
+        while (qntEGP>a[Lvl-1][2]) or (qntEGP>player.qplayers[ActualGamer]['egp']) or (prEGP>a[Lvl-1][3]): #Здесь он проверяет все ли в порядке с заявкой
+            print('Недопустимая сумма')
+            print('Введите другую цену или кол-во ЕГП' )
+            print('Кол-во ')
+            qntEGP=int(input())
+            print('Цена ');
+            prEGP=int(input())
+        mix.value[ActualGamer]=prEGP
+        mix.quantity[ActualGamer]=qntEGP
+        mix.numbersmix[ActualGamer] = ActualGamer
+        print('Цена за одну ЕГП в заявке игрока ',ActualGamer+1,' = ',mix.value[ActualGamer])
+        print('Общая сумма заявки= ',prEGP*qntEGP)
         os.system('cls')
-    mix.mixEsmEgp()
-    mix.satisfactionEgp(tabl.Level, a[tabl.Level][2])
+    mix.mixEgp()
+    mix.satisfactionEgp(a[Lvl-1][2])
