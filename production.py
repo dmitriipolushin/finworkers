@@ -17,7 +17,7 @@ def productionEgp():
             player.qplayers[i]['money'] -= quaCommon*2000
             quaAuto = int(input('Сколько ЕСМ вы хотите переработать на автоматических фабриках?'))
             while quaAuto > player.qplayers[i]['autoFactory']*2:
-                quaAuto = int(input('У вас недостаточно обычных фабрик, введите другое число'))
+                quaAuto = int(input('У вас недостаточно автоматизированных фабрик, введите другое число'))
             player.qplayers[i]['esm'] -= quaAuto
             player.qplayers[i]['egp'] += quaAuto
             player.qplayers[i]['money'] -= quaAuto*1500

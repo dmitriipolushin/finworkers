@@ -14,7 +14,8 @@ def players():
     global CurNumOfGamers
     CurNumOfGamers = int(input())
     for i in range(CurNumOfGamers):
-        player = {'money': 10000,      # Денежки
+        player = {'name': input('Введите свое имя '),
+            'money': 10000,      # Денежки
             'factory': 2,        # Кол-во обыч. Фабрик
             'autoFactory': 0,    # Кол-во автомат.Фабрик
             'esm': 4,            # Кол-во ЕСМ
