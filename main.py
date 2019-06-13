@@ -5,7 +5,6 @@ import Esm
 import Egp
 import buildings
 import production
-import windows
 import math as m
 import loseAndWin
 print('Добро пожаловать в игру финансовые воротилы!')

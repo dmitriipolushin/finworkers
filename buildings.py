@@ -1,6 +1,6 @@
 import player
 def buildings(i):
-    print('Игрок ',i+1)
+    print('Игрок ',player.qplayers[i]['name'])
     print('У вас ',player.qplayers[i]['factory'],' Обычных фабрик')
     print('У вас ',player.qplayers[i]['autoFactory'],' автоматизированных фабрик')
     print('Вы хотите строить фабрики в этом месяце?[y/n]')

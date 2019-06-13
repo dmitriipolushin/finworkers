@@ -18,7 +18,7 @@ def mixEsm():
                 numbersmix[d+1]=xx
     for ActualGamer in range(player.CurNumOfGamers):
         if (quantity[ActualGamer]==0):
-            print(ActualGamer+1,'. ','Игрок ',ActualGamer+1,' не делал заявки ')
+            print(ActualGamer+1,'. ','Игрок ',player.qplayers[ActualGamer]['name'],' не делал заявки ')
         else:
             print(ActualGamer+1,'. ','Заявка игрока ',numbersmix[ActualGamer]+1,' величиной ',value[ActualGamer],' за одну ЕСМ')
 def satisfactionEsm(rmngESM): #процедура удовлетворения заявок

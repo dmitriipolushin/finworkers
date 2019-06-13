@@ -12,7 +12,7 @@ def AcquisitionOfEgp(Lvl): #процедура для продажи егп иг
     for ActualGamer in range(player.CurNumOfGamers):
         print('Обстановка на рынке:')
         print('Общее кол-во скупаемых ЕГП = ',a[Lvl-1][2],', МаксЦенаЕГП = ',a[Lvl-1][3])
-        print('Игрок ',ActualGamer+1)
+        print('Игрок ',player.qplayers[ActualGamer]['name'])
         print('Ваши деньги= ',player.qplayers[ActualGamer]['money'])
         print('У вас ',player.qplayers[ActualGamer]['egp'],' ЕГП.')
         print('Сколько ЕГП вы хотите продать? ')

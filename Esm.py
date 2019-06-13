@@ -12,7 +12,7 @@ def AcquisitionOfEsm(Lvl):
     for ActualGamer in range(player.CurNumOfGamers):
         print('Обстановка на рынке:')
         print('Общее кол-во продаваемых ЕСМ= ',a[Lvl-1][0],', МинЦенаЕСМ= ',a[Lvl-1][1])
-        print('Игрок ',ActualGamer+ 1)
+        print('Игрок ',player.qplayers[ActualGamer]['name'])
         print('Ваши деньги = ',player.qplayers[ActualGamer]['money'])
         print('Сколько ЕСМ вы хотите приобрести? ')
         qntESM=int(input())

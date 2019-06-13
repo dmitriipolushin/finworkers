@@ -2,7 +2,7 @@ import player
 import os
 def productionEgp():
     for i in range(player.CurNumOfGamers):
-        print('Игрок ',i+1)
+        print('Игрок ',player.qplayers[i]['name'])
         print('У вас ',player.qplayers[i]['esm'],' ЕСМ.')
         ans = input('Вы хотите производить продукцию в этом месяце?[y/n]:')
         if ans == 'y':
