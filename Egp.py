@@ -39,3 +39,4 @@ def AcquisitionOfEgp(Lvl): #процедура для продажи егп иг
         os.system('cls')
     mix.mixEgp()
     mix.satisfactionEgp(a[Lvl-1][2])
+    return

@@ -7,9 +7,11 @@ import buildings
 import production
 import math as m
 import loseAndWin
+import loans
+import capital
 print('Добро пожаловать в игру финансовые воротилы!')
 mes=1
-tabl.Level=3
+Level=3
 print('Начало игры')
 player.players()
 #windows.showTable()
@@ -18,14 +20,20 @@ while mes < 13:
     costs.monthlyCosts()
     #windows.showTable()
     starshiy=m.fmod(mes, player.CurNumOfGamers)
-    tabl.Level=tabl.LevelCount(tabl.Level)
-    Esm.AcquisitionOfEsm(tabl.Level)
+    Level=tabl.LevelCount(Level)
+    Esm.AcquisitionOfEsm(Level)
     production.productionEgp()
-    Egp.AcquisitionOfEgp(tabl.Level)
+    Egp.AcquisitionOfEgp(Level)
     for ActualGamer in range(player.CurNumOfGamers):
         buildings.buildings(ActualGamer)
+    capital.capitalFunc(Level)
+    loans.LoansPercents()
+    loans.LoansRepayment(mes)
+    loans.LoansFunc(Level,mes)
+    capital.capitalFunc(Level)
     loseAndWin.loser()
     if len(player.qplayers) == 1:
         break
     mes+=1
+capital.capitalFunc(Level)
 loseAndWin.winner()

@@ -1,5 +1,4 @@
 import player
-
 def loser():
     check = 0
     for pl in player.qplayers:

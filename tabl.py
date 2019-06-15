@@ -1,6 +1,4 @@
 import random
-import math as m
-import player
 def LevelCount(Lvl):
     Count=0
     Count=random.randint(1,12)
