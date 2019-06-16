@@ -19,7 +19,7 @@ while mes < 13:
     print('Текущий месяц = ', mes)
     costs.monthlyCosts()
     #windows.showTable()
-    starshiy=m.fmod(mes, player.CurNumOfGamers)
+    starshiy=int(m.fmod(mes, player.CurNumOfGamers))
     Level=tabl.LevelCount(Level)
     Esm.AcquisitionOfEsm(Level)
     production.productionEgp()
