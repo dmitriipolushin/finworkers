@@ -12,5 +12,9 @@ def capitalFunc(Lvl):
         [2*player.CurNumOfGamers,500,2*player.CurNumOfGamers,5500],
         [m.trunc(2.5*player.CurNumOfGamers),400,m.trunc(1.5*player.CurNumOfGamers),5000],
         [3*player.CurNumOfGamers,300,player.CurNumOfGamers,4500]]
-        player.qplayers[ActualGamer]['capital'] = player.qplayers[ActualGamer]['factory']*5000 + player.qplayers[ActualGamer]['autoFactory']*7000 + player.qplayers[ActualGamer]['esm']*a[Lvl-1][1] + player.qplayers[ActualGamer]['egp']*a[Lvl-1][3] + player.qplayers[ActualGamer]['money']
+        player.qplayers[ActualGamer]['capital'] = (
+            player.qplayers[ActualGamer]['factory']*5000 + 
+            player.qplayers[ActualGamer]['autoFactory']*7000 + player.qplayers[ActualGamer]['esm']*a[Lvl-1][1] + 
+            player.qplayers[ActualGamer]['egp']*a[Lvl-1][3] + player.qplayers[ActualGamer]['money']
+        )
     return
