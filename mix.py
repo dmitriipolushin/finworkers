@@ -3,7 +3,7 @@ import player
 value = np.zeros((10), dtype=int)
 quantity = np.zeros_like(value)
 numbersmix = np.zeros_like(value)
-def mixEsm():
+def mixEsm(s):
     for ActualGamer in range(player.CurNumOfGamers-1): #процедура сортировки заявок 
         for d in range(player.CurNumOfGamers-ActualGamer-1):
             if value[d]<value[d+1]:
@@ -13,7 +13,18 @@ def mixEsm():
                 u = quantity[d] #Сортировка кол-ва
                 quantity[d]= quantity[d+1]
                 quantity[d+1]= u
-                xx= numbersmix[d]
+                xx= numbersmix[d] #сортировка порядка
+                numbersmix[d]= numbersmix[d+1]
+                numbersmix[d+1]=xx
+        for d in range(player.CurNumOfGamers-ActualGamer-1): #Сортировка одинаковых заявок по старшенству заявителя
+            if value[d]==value[d+1] and (abs(numbersmix[d]-s) > abs(numbersmix[d+1]-s)):
+                z = value[d] #Сортировка цен
+                value[d] = value[d+1]
+                value[d+1] = z
+                u = quantity[d] #Сортировка кол-ва
+                quantity[d]= quantity[d+1]
+                quantity[d+1]= u
+                xx= numbersmix[d] #сортировка порядка
                 numbersmix[d]= numbersmix[d+1]
                 numbersmix[d+1]=xx
     for ActualGamer in range(player.CurNumOfGamers):
@@ -36,7 +47,7 @@ def satisfactionEsm(rmngESM): #процедура удовлетворения �
         else: # если есм не соталось
             print(' Все ЕСМ были раскуплены ')
             print('оставшиеся деньги игрока ',player.qplayers[numbersmix[ActualGamer]]['name'],' = ',player.qplayers[numbersmix[ActualGamer]]['money'])
-def mixEgp():
+def mixEgp(s):
     for ActualGamer in range(player.CurNumOfGamers-1): #процедура сортировки заявок 
         for d in range(player.CurNumOfGamers-ActualGamer-1):
             if value[d]>value[d+1]:
@@ -46,7 +57,18 @@ def mixEgp():
                 u = quantity[d] #Сортировка кол-ва
                 quantity[d]= quantity[d+1]
                 quantity[d+1]= u
-                xx= numbersmix[d]
+                xx= numbersmix[d] #Сортировка порядка
+                numbersmix[d]= numbersmix[d+1]
+                numbersmix[d+1]=xx
+        for d in range(player.CurNumOfGamers-ActualGamer-1): #Сортировка одинаковых заявок по старшенству заявителя
+            if value[d]==value[d+1] and (abs(numbersmix[d]-s) > abs(numbersmix[d+1]-s)):
+                z = value[d] #Сортировка цен
+                value[d] = value[d+1]
+                value[d+1] = z
+                u = quantity[d] #Сортировка кол-ва
+                quantity[d]= quantity[d+1]
+                quantity[d+1]= u
+                xx= numbersmix[d] #Сортировка порядка
                 numbersmix[d]= numbersmix[d+1]
                 numbersmix[d+1]=xx
     for ActualGamer in range(player.CurNumOfGamers):

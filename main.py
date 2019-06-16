@@ -21,9 +21,9 @@ while mes < 13:
     #windows.showTable()
     starshiy=int(m.fmod(mes, player.CurNumOfGamers))
     Level=tabl.LevelCount(Level)
-    Esm.AcquisitionOfEsm(Level)
+    Esm.AcquisitionOfEsm(Level,starshiy)
     production.productionEgp()
-    Egp.AcquisitionOfEgp(Level)
+    Egp.AcquisitionOfEgp(Level,starshiy)
     for ActualGamer in range(player.CurNumOfGamers):
         buildings.buildings(ActualGamer)
     capital.capitalFunc(Level)

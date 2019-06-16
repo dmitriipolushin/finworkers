@@ -2,7 +2,7 @@ import player
 import mix
 import math as m
 import os
-def AcquisitionOfEsm(Lvl):
+def AcquisitionOfEsm(Lvl,star):
     a=[[player.CurNumOfGamers,800,3*player.CurNumOfGamers,6500],
     [m.trunc(1.5*player.CurNumOfGamers),650,m.trunc(2.5*player.CurNumOfGamers),6000],
     [2*player.CurNumOfGamers,500,2*player.CurNumOfGamers,5500],
@@ -36,6 +36,6 @@ def AcquisitionOfEsm(Lvl):
         print('Цена за одну ЕСМ в заявке игрока ',ActualGamer+1,' = ',mix.value[ActualGamer])
         print('Общая сумма заявки= ',prESM*qntESM)
         os.system('cls')
-    mix.mixEsm()
+    mix.mixEsm(star)
     mix.satisfactionEsm(a[Lvl-1][0])
     return
