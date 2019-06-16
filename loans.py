@@ -26,8 +26,12 @@ def LoansFunc(Lvl,mes):
             if (player.qplayers[ActualGamer]['FreeAutoFac']==0) and (player.qplayers[ActualGamer]['FreeFac']==0):
                 print("Игрок ",player.qplayers[ActualGamer]['name']," не может получить ссуду, т.к. у него нет свободных фабрик.")
                 break
-            if (player.qplayers[ActualGamer]['LoansSum']+5000>player.qplayers[ActualGamer]['capital']//2) or (player.qplayers[ActualGamer]['LoansSum']+10000>player.qplayers[ActualGamer]['capital']//2):
-                print("Игрок ",player.qplayers[ActualGamer]['name']," не может взять ссуду, т.к. при ее получении он превысит половину гарантированного капитала")
+            if (player.qplayers[ActualGamer]['LoansSum']+5000>player.qplayers[ActualGamer]['capital']//2):
+                if (player.qplayers[ActualGamer]['LoansSum']+10000>player.qplayers[ActualGamer]['capital']//2):
+                    print(
+                        "Игрок ",player.qplayers[ActualGamer]['name'],
+                        " не может взять ссуду, т.к. при ее получении он превысит половину гарантированного капитала"
+                        )
                 break
             print("Хотите ли получить ссуду?")
             print("Введите 1, если да, и любой другой символ, если нет.")
@@ -37,7 +41,10 @@ def LoansFunc(Lvl,mes):
                     print("Игрок ",player.qplayers[ActualGamer]['name']," не может получить ссуду, т.к. у него нет свободных фабрик.")
                     break
                 if (player.qplayers[ActualGamer]['LoansSum']+5000>player.qplayers[ActualGamer]['capital']//2):
-                    print("Игрок ",player.qplayers[ActualGamer]['name']," не может взять ссуду, т.к. при ее получении он превысит половину гарантированного капитала")
+                    print(
+                        "Игрок ",player.qplayers[ActualGamer]['name'],
+                        " не может взять ссуду, т.к. при ее получении он превысит половину гарантированного капитала"
+                        )
                     break
                 print("Под какую фабрику?")
                 print("Под обычную фабрику выдается 5000 долл., под автоматизированную 10000 долл. ")
